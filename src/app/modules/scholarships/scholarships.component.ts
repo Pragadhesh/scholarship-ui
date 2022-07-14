@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScholarshipService } from 'src/app/services/scholarship.service';
 
 @Component({
   selector: 'app-scholarships',
@@ -6,29 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scholarships.component.scss']
 })
 export class ScholarshipsComponent implements OnInit {
-
-  constructor() { }
-
-
-  demo = [
-    {
-      name: "RRR",
-      description: "Hey this is a demo scolarship",
-      eligiblity: "Only for students"
-    },
-    {
-      name: "RRR",
-      description: "Hey this is a demo scolarship",
-      eligiblity: "Only for students"
-    },
-    {
-      name: "RRR",
-      description: "Hey this is a demo scolarship",
-      eligiblity: "Only for students"
-    }
-  ]
-
+  constructor(private scholarshipService: ScholarshipService) {}
+  public scholarship: any[] = [];
   ngOnInit(): void {
+    this.scholarshipService.getScholarships().subscribe((res: any)=> this.scholarship = res)
   }
-
 }
+function then(arg0: (response: any) => void) {
+  throw new Error('Function not implemented.');
+}
+
