@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ScolarshipCardComponent } from './scolarship-card.component';
+import { ScholarshipCardComponent } from './scholarship-card.component';
 
 
 
 @NgModule({
   declarations: [
-    ScolarshipCardComponent
+    ScholarshipCardComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ScolarshipCardComponent
+    ScholarshipCardComponent
   ]
 })
-export class ScolarshipCardModule { }
+export class ScholarshipCardModule { }

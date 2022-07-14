@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './modules/homepage/homepage.component';
-import { ScolarshipsComponent } from './modules/scolarships/scolarships.component';
+import { ScholarshipsComponent } from './modules/scholarships/scholarships.component';
 
 const routes: Routes = [
   {
@@ -10,8 +10,8 @@ const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: 'scolarships',
-    component: ScolarshipsComponent
+    path: 'scholarships',
+    component: ScholarshipsComponent
   }
 ];
 @NgModule({

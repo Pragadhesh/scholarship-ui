@@ -14,5 +14,8 @@ import { CarouselModule } from './carousel/carousel.module';
     HomepageRoutingModule,
     CarouselModule
   ],
+  exports: [
+    HomepageComponent
+  ]
 })
 export class HomepageModule { }
