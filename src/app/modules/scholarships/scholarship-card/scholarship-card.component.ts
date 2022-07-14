@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+interface scholarships {
+  name: string;
+  description: string;
+  eligibility: string;
+}
 
 @Component({
   selector: 'app-scholarship-card',
@@ -8,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
 export class ScholarshipCardComponent implements OnInit {
 
   constructor() { }
+
+  @Input() scolarships: scholarships[] = []
 
   ngOnInit(): void {
   }

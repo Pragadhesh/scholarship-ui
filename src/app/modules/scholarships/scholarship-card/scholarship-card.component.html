@@ -1,20 +1,18 @@
-<div class="flex flex-col mt-6 w-3/5 bg-neutral-100 rounded-md border border-orange-200">
-    <div class="flex w-full justify-between">
-        <div class="flex p-2 text-2xl italic font-semibold text-yellow-500 font-proza">
-            RRR Scholarship
+<div *ngIf="scolarships && scolarships.length > 0" class="flex flex-col w-full ml-40  bg-orange-50">
+    <div *ngFor="let scolarship of scolarships; let i=index" class="flex flex-col mt-6 w-3/5 bg-neutral-100 rounded-md border border-orange-200">
+        <div class="flex w-full justify-between">
+            <div class="flex p-2 text-2xl italic font-semibold text-yellow-500 font-proza">
+                {{scolarship.name}}
+            </div>
+            <button class="pr-3 p-2 text-2xl font-bold text-violet-500" >
+                APPLY
+            </button>
         </div>
-        <button class="pr-3 p-2 text-2xl font-bold text-violet-500" >
-            APPLY
-        </button>
-    </div>
-    <div class="flex p-5 text-base ">
-        This is the description of the items pragadhesh pragadhesh pragadhesh pragadhesh
-        his is the description of the items pragadhesh pragadhesh pragadhesh pragadhesh
-        his is the description of the items pragadhesh pragadhesh pragadhesh pragadhesh
-        his is the description of the items pragadhesh pragadhesh pragadhesh pragadhesh
-        This is the description of the items pragadhesh pragadhesh pragadhesh pragadhesh
-    </div>
-    <div class="flex p-2 text-xl border-t-2 border-orange-100 font-semibold text-black font-proza">
-           This is for college students only
-    </div>
-</div> 
+        <div class="flex p-5 text-base ">
+           {{scolarship.description}}
+        </div>
+        <div class="flex p-2 text-xl border-t-2 border-orange-100 font-semibold text-black font-proza">
+               {{scolarship.eligiblity}}
+        </div>
+    </div> 
+</div>

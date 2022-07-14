@@ -9,6 +9,25 @@ export class ScholarshipsComponent implements OnInit {
 
   constructor() { }
 
+
+  demo = [
+    {
+      name: "RRR",
+      description: "Hey this is a demo scolarship",
+      eligiblity: "Only for students"
+    },
+    {
+      name: "RRR",
+      description: "Hey this is a demo scolarship",
+      eligiblity: "Only for students"
+    },
+    {
+      name: "RRR",
+      description: "Hey this is a demo scolarship",
+      eligiblity: "Only for students"
+    }
+  ]
+
   ngOnInit(): void {
   }
 
