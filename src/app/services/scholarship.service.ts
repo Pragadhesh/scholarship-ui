@@ -12,4 +12,9 @@ export class ScholarshipService {
   getScholarships() {
       return this.http.get(`${BASE_URL}${API.GET_SCHOLARSHIPS}`)
   }
+
+  addScholarship(body) {
+      return this.http.post(`${BASE_URL}${API.GET_SCHOLARSHIPS}`,body)
+      
+  }
 }

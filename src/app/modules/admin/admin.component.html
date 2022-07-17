@@ -8,6 +8,7 @@
         Add Scholarship
       </button>
     </div>
+    <app-scholarship-card [scolarships]="scholarship"></app-scholarship-card>
 </div>
 <div class="uc-modal" *ngIf="showModal === 1">
   <div class="uc-m-content">
@@ -18,20 +19,20 @@
           <div class="flex text-xl bold font-proza ">
             NAME
           </div>
-          <input type="text" id="name" name="name" class="flex h-8 text-lg rounded-sm w-96">
+          <input type="text" id="name" name="name" #scholarshipname class="flex h-8 text-lg rounded-sm w-96">
           <div class="flex text-xl bold font-proza pt-5">
             DESCRIPTION
           </div>
-          <textarea type="text" id="name" name="name" class="flex text-sm rounded-sm h-28 w-96">
+          <textarea type="text" id="description" name="description" #description class="flex text-sm rounded-sm h-28 w-96">
           </textarea>
           <div class="flex text-xl bold font-proza pt-5">
             ELIGIBILITY
           </div>
-          <textarea type="text" id="name" name="name" class="flex text-sm rounded-sm h-28 w-96">
+          <textarea type="text" id="eligibility" name="eligibility" #eligibility class="flex text-sm rounded-sm h-28 w-96">
           </textarea>
       </div>
       <div class="uc-m-footer">
-          <button>Add</button>
+          <button (click)="addscholarship(scholarshipname.value,description.value,eligibility.value)">Add</button>
           <button (click)="close()">Cancel</button>
       </div>
   </div>
