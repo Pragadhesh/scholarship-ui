@@ -1,0 +1,40 @@
+.uc-modal
+{
+    position: fixed;
+    background: #000000bf;
+    top:0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.uc-m-content
+{
+    background: #fff;
+    width: 50%;
+    margin: 0 auto;
+}
+.uc-m-header
+{
+    padding: 20px;
+    background: #a8a8c3;
+    color: #fff;
+}
+.uc-m-header h4
+{
+    margin: 0%;
+}
+.uc-m-body {
+    padding: 20px;
+    min-height: 200px;
+}
+.uc-m-footer {
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    background: #a8a8c3;
+    color: #fff;
+    text-align: right;
+}
+.uc-m-footer button {
+    margin-left: 20px;
+    margin-right: 0;
+}
