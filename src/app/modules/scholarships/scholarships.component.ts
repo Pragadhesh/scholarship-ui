@@ -9,6 +9,7 @@ import { ScholarshipService } from 'src/app/services/scholarship.service';
 export class ScholarshipsComponent implements OnInit {
   constructor(private scholarshipService: ScholarshipService) {}
   public scholarship: any[] = [];
+  apply:boolean = true;
   ngOnInit(): void {
     this.scholarshipService.getScholarships().subscribe((res: any)=> this.scholarship = res)
   }

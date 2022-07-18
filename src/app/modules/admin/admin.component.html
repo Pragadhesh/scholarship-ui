@@ -8,7 +8,7 @@
         Add Scholarship
       </button>
     </div>
-    <app-scholarship-card [scolarships]="scholarship"></app-scholarship-card>
+    <app-scholarship-card [scolarships]="scholarship" [apply]="apply"></app-scholarship-card>
 </div>
 <div class="uc-modal" *ngIf="showModal === 1">
   <div class="uc-m-content">
@@ -31,8 +31,10 @@
           <textarea type="text" id="eligibility" name="eligibility" #eligibility class="flex text-sm rounded-sm h-28 w-96">
           </textarea>
       </div>
-      <div class="uc-m-footer">
-          <button (click)="addscholarship(scholarshipname.value,description.value,eligibility.value)">Add</button>
+      <div class="uc-m-footer flex flex-row  justify-end">
+          <button (click)="addscholarship(scholarshipname.value,description.value,eligibility.value)">Add
+          </button>
+          <div class="loader flex ml-1" *ngIf="showloading"></div>
           <button (click)="close()">Cancel</button>
       </div>
   </div>

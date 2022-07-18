@@ -10,6 +10,8 @@ export class AdminComponent implements OnInit {
 
   constructor(public scholarshipservice: ScholarshipService) { }
   public scholarship: any[] = [];
+  showloading: boolean = false;
+  apply: boolean = false;
 
   ngOnInit(): void {
     this.scholarshipservice.getScholarships().subscribe((res: any)=> this.scholarship = res)
@@ -27,15 +29,20 @@ export class AdminComponent implements OnInit {
   }
   addscholarship(scholarsipname,description,eligibility)
   {
+    this.showloading=true
     let body = {
       "name" : scholarsipname,
       "description" : description,
       "eligiblity": eligibility,
-      "status": true
+      "status": "true"
     }
-    this.scholarshipservice.addScholarship(body).subscribe((res: any)=> console.log(res));
-    this.scholarshipservice.getScholarships().subscribe((res: any)=> this.scholarship = res)
-    this.showModal = -1;
+    this.scholarshipservice.addScholarship(body).subscribe(
+    (response) => {
+      console.log(response);
+      this.ngOnInit()
+      this.showloading = false
+      this.showModal = -1;
+    });
   }
 }
 

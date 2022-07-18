@@ -16,6 +16,7 @@ export class ScholarshipCardComponent implements OnInit {
   constructor() { }
 
   @Input() scolarships: scholarships[] = []
+  @Input() apply: boolean
 
   ngOnInit(): void {
   }
