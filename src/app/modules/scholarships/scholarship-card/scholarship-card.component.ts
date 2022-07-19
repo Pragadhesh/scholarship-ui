@@ -17,8 +17,13 @@ export class ScholarshipCardComponent implements OnInit {
 
   @Input() scolarships: scholarships[] = []
   @Input() apply: boolean
-
+  templateid: string;
   ngOnInit(): void {
+  }
+
+  gettemplateid(scholarship)
+  {
+    this.templateid = scholarship.templateid
   }
 
 }

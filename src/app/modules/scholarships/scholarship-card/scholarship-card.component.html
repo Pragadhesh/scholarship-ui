@@ -4,7 +4,7 @@
             <div class="flex p-2 text-2xl italic font-semibold text-yellow-500 font-proza">
                 {{scolarship.name}}
             </div>
-            <button *ngIf="apply" class="pr-3 p-2 text-2xl font-bold text-violet-500" >
+            <button *ngIf="apply" class="pr-3 p-2 text-2xl font-bold text-violet-500" (click)="gettemplateid(scolarship)" >
                 APPLY
             </button>
         </div>
