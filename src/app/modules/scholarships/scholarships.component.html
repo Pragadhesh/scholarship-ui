@@ -4,5 +4,28 @@
           Scholarships
       </div>
     </div>
-    <app-scholarship-card [scolarships]="scholarship" [apply]="apply"></app-scholarship-card>
+    <app-scholarship-card [scolarships]="scholarship" [apply]="apply" (templateid)="show(1,$event)"></app-scholarship-card>
+</div>
+<div class="uc-modal" *ngIf="showModal === 1">
+  <div class="uc-m-content">
+      <div class="uc-m-header">
+          <h4>APPLY SCHOLARSHIP</h4>
+      </div>
+      <div class="uc-m-body">
+          <div class="flex text-xl bold font-proza ">
+            FULLNAME
+          </div>
+          <input type="text" id="name" name="name" #signername class="flex h-8 text-lg rounded-sm w-96">
+          <div class="flex text-xl bold font-proza pt-5">
+            EMAIL
+          </div>
+          <input type="text" id="name" name="name" #signeremail class="flex h-8 text-lg rounded-sm w-96">
+      </div>
+      <div class="uc-m-footer flex flex-row  justify-end">
+          <button (click)="applyscholarship(signername.value,signeremail.value)">Apply
+          </button>
+          <div class="loader flex ml-1" *ngIf="showloading"></div>
+          <button (click)="close()">Cancel</button>
+      </div>
+  </div>
 </div>

@@ -1,0 +1,61 @@
+.uc-modal
+{
+    position: fixed;
+    background: #000000bf;
+    top:0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.uc-m-content
+{
+    background: #fff;
+    width: 50%;
+    margin: 0 auto;
+}
+.uc-m-header
+{
+    padding: 20px;
+    background: #a8a8c3;
+    color: #fff;
+}
+.uc-m-header h4
+{
+    margin: 0%;
+}
+.uc-m-body {
+    padding: 20px;
+    min-height: 200px;
+}
+.uc-m-footer {
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    background: #a8a8c3;
+    color: #fff;
+    text-align: right;
+}
+.uc-m-footer button {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #68201c;
+    width: 25px;
+    height: 25px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

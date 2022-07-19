@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 interface scholarships {
   name: string;
@@ -17,13 +17,13 @@ export class ScholarshipCardComponent implements OnInit {
 
   @Input() scolarships: scholarships[] = []
   @Input() apply: boolean
-  templateid: string;
+  @Output() templateid = new EventEmitter<any>();
   ngOnInit(): void {
   }
 
   gettemplateid(scholarship)
   {
-    this.templateid = scholarship.templateid
+    this.templateid.emit(scholarship.templateid)
   }
 
 }
