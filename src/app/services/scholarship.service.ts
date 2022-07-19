@@ -14,7 +14,11 @@ export class ScholarshipService {
   }
 
   addScholarship(body) {
-      return this.http.post(`${BASE_URL}${API.GET_SCHOLARSHIPS}`,body)
-      
+      return this.http.post(`${BASE_URL}${API.GET_SCHOLARSHIPS}`,body)  
   }
+
+  applyScholarship(body) {
+    return this.http.post(`${BASE_URL}${API.APPLY_SCHOLARSHIPS}`,body)  
+  }
+
 }

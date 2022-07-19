@@ -11,6 +11,7 @@ export class ScholarshipsComponent implements OnInit {
   public scholarship: any[] = [];
   templateid : string;
   apply:boolean = true;
+  showloading: boolean = false;
   ngOnInit(): void {
     this.scholarshipService.getScholarships().subscribe((res: any)=> this.scholarship = res)
   }
@@ -26,9 +27,19 @@ export class ScholarshipsComponent implements OnInit {
   }
   applyscholarship(signername,signeremail)
   {
-    console.log(signername)
-    console.log(signeremail)
-    console.log(this.templateid)
+    this.showloading=true
+    let body = {
+      templateID : this.templateid,
+      signerName : signername,
+      signeremail : signeremail
+    }
+    this.scholarshipService.applyScholarship(body).subscribe(
+      (response) => {
+        console.log(response);
+        this.ngOnInit()
+        this.showloading = false
+        this.showModal = -1;
+      });
   }
 }
 function then(arg0: (response: any) => void) {
