@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ScholarshipService } from 'src/app/services/scholarship.service';
 
+type embeddedsigning = {
+  envelopeId: string;
+  redirectUrl: string;
+};
+
 @Component({
   selector: 'app-scholarships',
   templateUrl: './scholarships.component.html',
@@ -34,11 +39,10 @@ export class ScholarshipsComponent implements OnInit {
       signeremail : signeremail
     }
     this.scholarshipService.applyScholarship(body).subscribe(
-      (response) => {
-        console.log(response);
-        this.ngOnInit()
+      (response:embeddedsigning) => {
         this.showloading = false
         this.showModal = -1;
+        window.location.href = response.redirectUrl;
       });
   }
 }
