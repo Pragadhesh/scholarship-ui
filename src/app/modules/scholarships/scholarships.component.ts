@@ -34,9 +34,9 @@ export class ScholarshipsComponent implements OnInit {
   {
     this.showloading=true
     let body = {
-      templateID : this.templateid,
+      templateId : this.templateid,
       signerName : signername,
-      signeremail : signeremail
+      signerEmail : signeremail
     }
     this.scholarshipService.applyScholarship(body).subscribe(
       (response:embeddedsigning) => {
