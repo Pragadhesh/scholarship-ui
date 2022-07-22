@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ScholarshipService } from 'src/app/services/scholarship.service';
+import { Router } from '@angular/router';
 
 type embeddedsigning = {
   envelopeId: string;
   redirectUrl: string;
 };
+
 
 @Component({
   selector: 'app-scholarships',
@@ -12,19 +14,34 @@ type embeddedsigning = {
   styleUrls: ['./scholarships.component.scss']
 })
 export class ScholarshipsComponent implements OnInit {
-  constructor(private scholarshipService: ScholarshipService) {}
+  constructor(private scholarshipService: ScholarshipService,private router: Router) {}
   public scholarship: any[] = [];
   templateid : string;
   apply:boolean = true;
   showloading: boolean = false;
+  consent_url: string;
   ngOnInit(): void {
+    const regex = new RegExp('templateid*');
+    if (regex.test(this.router.url))
+    {
+      this.showModal = 1
+      let temp = this.router.url.split('templateid=')
+      let tempid = temp[1].split('&event')
+      this.templateid = tempid[0]
+    }
     this.scholarshipService.getScholarships().subscribe((res: any)=> this.scholarship = res)
   }
   showModal = -1;
-  show(index,tempid)
+  show(tempid)
   {
-    this.showModal = index;
-    this.templateid = tempid;
+    let bdy = {
+      templateid: tempid
+    }
+    this.scholarshipService.getconsent(bdy).subscribe((res: any)=> 
+    {
+    this.consent_url = res.consent_url
+    window.location.href = this.consent_url;
+    });
   }
   close()
   {
@@ -38,6 +55,7 @@ export class ScholarshipsComponent implements OnInit {
       signerName : signername,
       signerEmail : signeremail
     }
+    console.log(body)
     this.scholarshipService.applyScholarship(body).subscribe(
       (response:embeddedsigning) => {
         this.showloading = false

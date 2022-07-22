@@ -21,4 +21,8 @@ export class ScholarshipService {
     return this.http.post(`${BASE_URL}${API.APPLY_SCHOLARSHIPS}`,body)  
   }
 
+  getconsent(body) {
+    return this.http.post(`${BASE_URL}${API.GET_CONSENT}`,body)
+}
+
 }

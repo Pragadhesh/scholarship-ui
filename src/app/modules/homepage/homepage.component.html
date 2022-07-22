@@ -1,16 +1,19 @@
 <div class="flex flex-col h-screen w-full bg-orange-50">
-    <div class="flex w-full h-28 bg-neutral-100 justify-between">
-      <div class="flex p-5 pl-12 font-bold italic justify-center text-5xl text-yellow-600">
-          Scholar
+    <div class="flex w-full h-28 bg-neutral-100 justify-evenly">
+      <div class="lex p-5 pl-12 font-bold italic justify-center text-5xl text-yellow-600">
+          Agaram Scholarship
       </div>
-      <div class="flex p-5 pr-12 justify-center">
-        <button class="flex p-5 font-light justify-center text-2xl" routerLink="/scholarships">
-          View all scholarships
+      <div class="flex h-14 items-center mt-4 justify-between">
+        <button class="flex h-14 w-56 ml-4 self-center bold font-proza justify-center items-center bg-slate-400"
+        routerLink="/scholarships">
+        VIEW ALL SCHOLARSHIPS
         </button>
-        <button class="flex p-5 font-light justify-center text-2xl" routerLink="/admin">
-          Login
+        <button class="flex h-14 w-48 ml-4 self-center bold font-proza justify-center items-center bg-slate-400"
+        routerLink="/admin">
+        LOGIN AS ADMIN
         </button>
-    </div>
+      </div>
+
     </div>
     <div class="w-full h-screen pt-12">
       <app-carousel [images]= "images" 
